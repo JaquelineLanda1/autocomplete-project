@@ -1,0 +1,44 @@
+* {
+  box-sizing: border-box;
+}
+
+div.search-container {
+  position: relative;
+  width: 100%;
+  
+}
+
+.suggestions {
+  position:absolute;
+  width: 203px;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  list-style: none;
+
+  width: 100%;
+  border: 1px solid black;
+  border-top: none;
+  
+}
+
+button {
+  cursor:pointer;
+  
+  width:100%;
+  background: white;
+  border: unset;
+  text-align: left; /*Has to be here an not in the li or it won't work */
+  padding: 0.5em;
+
+}
+
+button:hover {
+  background: lightgrey;
+}
+
