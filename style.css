@@ -1,5 +1,11 @@
 * {
   box-sizing: border-box;
+  text-align: center;
+}
+
+html {
+  background: rgb(63,94,251);
+  background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(222,70,252,1) 100%);
 }
 
 div.search-container {
@@ -8,14 +14,30 @@ div.search-container {
   
 }
 
+.input {
+  padding: 20%;
+}
+
+h1 {
+  font-family: 'Dekko';
+  font-size: 50px;
+  color: white;
+}
+
+#searchbar {
+  color: blue
+}
+
 .suggestions {
   position:absolute;
-  width: 203px;
+  width: 204px;
+  left: 44.5%;
 }
 
 ul {
   padding: 0;
   margin: 0;
+  
 }
 
 li {
@@ -41,4 +63,3 @@ button {
 button:hover {
   background: lightgrey;
 }
-
