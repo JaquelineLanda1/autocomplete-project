@@ -2,6 +2,7 @@ const fruits = ['Apple', 'Apricot', 'Avocado 🥑', 'Banana', 'Bilberry', 'Black
 
 /* Fruit Search Bar Element */
 const searchbar = document.querySelector('#searchbar');
+const buttons = document.querySelectorAll("button");
 
 
 searchbar.addEventListener("input", whileTyping);
@@ -14,22 +15,25 @@ function whileTyping() {
   const filtered = [];
   
   fruits.forEach(function(fruitname){
-	if((fruitname.substring(0, typing.length).toLowerCase()) === typing)
+    if(typing.length === 0){
+      return;
+    };
+    if((fruitname.substring(0, typing.length).toLowerCase()) === typing){
+    console.log();
     return filtered.push(fruitname);
-	
+  }
   });
 
-  /*console.log(typing);
-  console.log(filtered);*/
+  /*console.log();
+   console.log(filtered);*/
 
   createDropdown(filtered);
 }
 
 
 function createDropdown(list) {
-  
   const ul = document.querySelector("ul");
-
+  
   console.log(list);
 
   for(let name of list){
@@ -37,11 +41,19 @@ function createDropdown(list) {
   const newbtn = document.createElement("button");
 
   newbtn.innerText = name;
+
+  newbtn.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    searchbar.value = newbtn.innerText;
+    removeOldDropdown();
+  });
+
   newli.appendChild(newbtn);
   ul.appendChild(newli);
   }
-
   
+
 }
 
 function removeOldDropdown(){
